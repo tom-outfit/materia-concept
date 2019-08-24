@@ -3,10 +3,11 @@ import { AppBar, Toolbar, IconButton, Drawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import DrawerModal from './DrawerModal.js';
-import ParagraphBlock from './ParagraphBlocks.js';
-import data from './data.json';
+import TodoList from './ParagraphBlocks.js';
+// import data from './data.json';
 
 const drawerWidth = 240;
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -30,17 +31,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 function App() {
   const classes = useStyles();
-  const stories = data;
-  const block = stories.map((story) => {
-    return (
-      <ParagraphBlock key={story.id}
-        text={story.content} />
-    )
-  })
-  // Object.keys(stories).map((story, i) => {console.log(story.content)})
   return (
     <div className="App">
       <div className={classes.root}>
@@ -73,7 +65,7 @@ function App() {
           {/* contentBlockComponent
               uses responsive grid        
           */}
-          {block}
+          <TodoList />
         </main>
       </div>
     </div>

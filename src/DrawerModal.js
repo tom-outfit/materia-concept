@@ -29,7 +29,6 @@ const useStyles = makeStyles(theme => ({
 
 function DrawerModal() {
     const classes = useStyles();
-
     return (
         <div className={classes.root}>
             <Divider />
